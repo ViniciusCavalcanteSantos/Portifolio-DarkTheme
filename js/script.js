@@ -6,7 +6,20 @@ const progress_bars = document.querySelectorAll(".sk-progress svg circle");
 
 window.addEventListener("scroll", () => {
   if(!skillsPlayed) skillsCounter();
+  if(!mlPlayed) mlCounter();
 })
+
+function updateCount(counter, maxNum) {
+  let currentNum = +counter.innerText;
+
+  if(currentNum < maxNum) {
+    counter.innerText = currentNum + 1;
+
+    setTimeout(() => {
+      updateCount(counter, maxNum);      
+    }, 12)
+  }
+}
 
 /* ------------- NAVBAR ------------- */
 
@@ -26,18 +39,6 @@ sr.reveal(".showcase-info", {delay: 300});
 sr.reveal(".showcase-image", {origin: "top", delay: 400});
 
 /* ------------- BARRA DE PROGRESSO DAS SKILLS ------------- */
-function updateCount(counter, maxNum) {
-  let currentNum = +counter.innerText;
-
-  if(currentNum < maxNum) {
-    counter.innerText = currentNum + 1;
-
-    setTimeout(() => {
-      updateCount(counter, maxNum);      
-    }, 12)
-  }
-}
-
 function hasReached(el) {
   let topPosition = el.getBoundingClientRect().top;
 
@@ -64,4 +65,22 @@ function skillsCounter() {
   })
 
   progress_bars.forEach(p => p.style.animation = "progress 2s ease-in-out forwards")
+}
+
+/* ------------- CONTADOR DO SERVIÇOS ------------- */
+const ml_section = document.querySelector(".milestones");
+const ml_counters = document.querySelectorAll(".milestones span");
+let mlPlayed = false;
+
+function mlCounter() {
+  if(!hasReached(ml_section)) return;
+
+  mlPlayed = true;
+
+  console.log("teste")
+  ml_counters.forEach((counter) => {
+    let target = +counter.dataset.target;
+    
+    setTimeout(() => {updateCount(counter, target)}, 400);
+  })
 }
