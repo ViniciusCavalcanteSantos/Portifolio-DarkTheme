@@ -77,10 +77,19 @@ function mlCounter() {
 
   mlPlayed = true;
 
-  console.log("teste")
   ml_counters.forEach((counter) => {
     let target = +counter.dataset.target;
     
     setTimeout(() => {updateCount(counter, target)}, 400);
   })
 }
+
+/* ------------- CONTADOR DO SERVIÇOS ------------- */
+const mixer = mixitup(".portifolio-gallery", {
+  selectors: {
+      target: '.prt-card'
+  },
+  animation: {
+      duration: 500
+  }
+});
