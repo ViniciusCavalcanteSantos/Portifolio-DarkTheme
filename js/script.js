@@ -140,3 +140,13 @@ function changeImage(index) {
   images.forEach(img => img.classList.remove("showImage"));
   images[index].classList.add("showImage");
 }
+
+/* ------------- SWIPER SLIDER ------------- */
+const swiper = new Swiper('.swiper', {
+  loop: true,
+  speed: 500,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  }
+});

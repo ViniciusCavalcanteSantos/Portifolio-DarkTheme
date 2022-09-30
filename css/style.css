@@ -882,3 +882,124 @@ ul {
   opacity: 1;
   transition: .45s .1s;
 }
+
+/* ------------- TESTIMONIALS ------------- */
+.testimonials {
+  padding: var(--section-padding) 0 calc(var(--section-padding) + 120px);
+}
+
+.testimonials .container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+}
+
+.swiper {
+  width: 100%;
+  padding: 4rem 0 2.5rem;
+  background-color: var(--bg-color-2);
+  border-radius: 15px;
+}
+
+.swiper-pagination {
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 11px;
+  margin-top: 3rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--main-color-1);
+  opacity: .3;
+  width: 7px;
+  height: 7px;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 11px;
+  height: 11px;
+}
+
+.swiper-slide {
+  padding: 0 2.5rem;
+}
+
+.swiper-slide .client {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.swiper-slide .client img {
+  width: 100%;
+}
+
+.swiper-slide .client-info h4 {
+  font-weight: 500;
+  color: var(--heading-color);
+  margin-bottom: .3rem;
+  font-size: 1.05rem;
+}
+
+.swiper-slide .client-info h5 {
+  color: var(--text-color);
+  font-family: 500;
+  font-size: .8rem;
+}
+
+.swiper-slide .client-info h5 a {
+  color: var(--main-color-1);
+}
+
+.swiper-slide .text {
+  display: block;
+  margin: 1.5rem 0 0;
+}
+
+.testimonials-title {
+  padding-left: 5rem;
+}
+
+.testimonials-title > * {
+  color: #fff;
+}
+
+.section-background {
+  position: absolute;
+  width: 100vw;
+  max-width: 75rem;
+  height: calc(100% + 120px);
+  background: linear-gradient(55deg, var(--main-color-2) 20%, var(--main-color-1) 20%);
+  border-bottom-left-radius: 60px;
+  z-index: -1;
+  top: 15px;
+  left: 50%;
+  transform: translateX(calc(-50% + 120px));
+}
+
+.section-background .person {
+  position: absolute;
+  height: 450px;
+  bottom: 0;
+  right: 0;
+}
+
+.section-background .circle {
+  position: absolute;
+  width: 170px;
+  left: 45%;
+  top: 79%;
+  transform: translate(-50%, -50%);
+}
+
+.section-background .square {
+  position: absolute;
+  left: 77%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+}
