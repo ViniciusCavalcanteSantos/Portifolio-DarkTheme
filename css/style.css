@@ -923,6 +923,7 @@ textarea.form-input {
 
 /* ------------- TESTIMONIALS ------------- */
 .testimonials {
+  overflow: hidden;
   padding: var(--section-padding) 0 calc(var(--section-padding) + 120px);
 }
 
@@ -1105,4 +1106,48 @@ textarea.form-input {
   left: 90%;
   top: 98%;
   transform: translate(-50%, -50%);
+}
+
+/* ------------- INSCRIÇÃO ------------- */
+.subscription {
+  overflow: hidden;
+}
+
+.sub-box {
+  background-color: var(--bg-color-2);
+  padding: 5rem;
+  width: 100%;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 6rem;
+  align-items: center;
+}
+
+.sub-box .heading {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.sub-box form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1rem;
+}
+
+.subscription .map {
+  position: absolute;
+  height: 150%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: .15;
+}
+
+.subscription .square {
+  position: absolute;
+  left: 52%;
+  bottom: 7%;
+  transform: translate(0, -50%) scale(.95);
 }
