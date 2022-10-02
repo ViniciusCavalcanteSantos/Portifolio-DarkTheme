@@ -5,6 +5,7 @@ const sk_counters = document.querySelectorAll(".counter span");
 const progress_bars = document.querySelectorAll(".sk-progress svg circle");
 
 window.addEventListener("scroll", () => {
+  activeLink();
   if(!skillsPlayed) skillsCounter();
   if(!mlPlayed) mlCounter();
 })
@@ -150,3 +151,22 @@ const swiper = new Swiper('.swiper', {
     clickable: true
   }
 });
+
+/* ------------- LINK ATIVO ------------- */
+const links = document.querySelectorAll(".nav-link");
+
+activeLink();
+function activeLink() {
+  let sections = document.querySelectorAll("section[id]");
+  let passedSections = Array.from(sections).map((section, i) => {
+    return {
+      y: section.getBoundingClientRect().top - header.offsetHeight,
+      id: i
+    }
+  })
+  .filter((section) => section.y <= 0);
+  let currentSectionID = passedSections.at(-1).id;
+
+  links.forEach(link => link.classList.remove("active"));
+  links[currentSectionID].classList.add("active");
+}
